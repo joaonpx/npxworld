@@ -26,6 +26,24 @@ body {
   font-size: 2.4rem;
 }
 
+.gb {
+  position: absolute;
+  right: 2rem;
+  bottom: 2rem;
+
+  opacity: 0.01;
+
+  text-decoration: none;
+
+  transition: all 200ms;
+}
+
+.gb:hover {
+  opacity: 1;
+
+  font-size: 2.6rem;
+}
+
 /* -------------- header -------------- */
 header,
 header > p {
