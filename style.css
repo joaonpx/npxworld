@@ -65,3 +65,10 @@ footer a {
 .hover-effect:hover {
   color: var(--primary);
 }
+
+/* -------------- responsive -------------- */
+@media (max-width: 425px) {
+  body {
+    font-size: 2rem;
+  }
+}
