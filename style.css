@@ -24,6 +24,11 @@ body {
 
   font-family: "Open Sans", sans-serif;
   font-size: 2.4rem;
+  line-height: 1.8;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10rem;
 }
 
 .gb {
@@ -45,23 +50,50 @@ body {
 }
 
 /* -------------- header -------------- */
-header,
-header > p {
-  margin-bottom: 0.8rem;
-}
-
 header p {
   transition: all 200ms;
 }
 
-/* -------------- footer -------------- */
-footer a {
+header a {
   text-decoration: none;
   color: var(--text);
 
   transition: all 200ms;
 }
 
+/* -------------- main -------------- */
+main {
+  height: 70%;
+}
+
+.project-gallery {
+  display: grid;
+  grid-template-columns: 65% auto;
+  grid-template-rows: 48.5% 48.5%;
+  gap: 1.5rem;
+
+  height: 100%;
+}
+
+.project-gallery .project-gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  border-radius: 0.8rem;
+
+  transition: all 200ms;
+}
+
+.project-gallery .project-gallery-item .project-gallery-img:hover {
+  transform: scale(1.01);
+}
+
+.project-gallery .project-gallery-item:nth-child(2) {
+  grid-row: span 2;
+}
+
+/* -------------- effects -------------- */
 .hover-effect:hover {
   color: var(--primary);
 }
