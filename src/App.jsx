@@ -22,7 +22,7 @@ export function App() {
 
         <ul className="flex gap-5">
           <li>
-            <a href="https://www.instagram.com/npxworld/">
+            <a href="https://www.instagram.com/npxworld/" target="_blank">
               <Badge
                 variant="outline"
                 className="p-3 hover:bg-zinc-50 hover:text-zinc-950 shadow-inner text-base"
@@ -45,7 +45,7 @@ export function App() {
           </li>
 
           <li>
-            <a href="https://github.com/joaonpx">
+            <a href="https://github.com/joaonpx" target="_blank">
               <Badge
                 variant="outline"
                 className="p-3 hover:bg-zinc-50 hover:text-zinc-950 text-base "
