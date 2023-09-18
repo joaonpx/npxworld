@@ -16,6 +16,7 @@ export function App() {
     <div className="p-10">
       <header className="text-xl leading-normal">
         <div className="mb-5">
+          <h1 hidden>João Carlos</h1>
           <p>Olá, meu nome é João Carlos e sou desenvolvedor front-end.</p>
           <p>Entre em contato para criarmos algo novo.</p>
         </div>
