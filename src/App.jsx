@@ -33,7 +33,7 @@ export function App() {
             </a>
           </li>
           <li>
-            <a href="mailto:hello@npxworld.com">
+            <a href="mailto:cheyprivado@gmail.com">
               <Badge
                 variant="outline"
                 className="p-3 hover:bg-zinc-50 hover:text-zinc-950 text-base"
