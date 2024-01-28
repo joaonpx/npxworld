@@ -208,7 +208,7 @@ export function App() {
                   img={wdotDemo}
                   name="Wdot"
                   url="https://wdotnews.vercel.app"
-                  description="Homepage para notícias"
+                  description="Homepage de notícias"
                   techs={["React"]}
                 />
               </SwiperSlide>
@@ -216,8 +216,8 @@ export function App() {
                 <Project
                   img={allDesertGoodsDemo}
                   name="AllDesertGoods"
-                  url="https://wdotnews.vercel.app"
-                  description="Galeria de artes"
+                  url="https://alldesertgoods.vercel.app"
+                  description="Art Gallery"
                   techs={["HTML", "CSS", "JS"]}
                 />
               </SwiperSlide>
