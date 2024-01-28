@@ -3,9 +3,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      backgroundImage: {
+      backgroundImage: (theme) => ({
         "hero-bg": "url('./src/assets/hero-bg.png')",
-      },
+      }),
     },
   },
   plugins: [],
