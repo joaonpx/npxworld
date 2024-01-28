@@ -27,7 +27,7 @@ export function App() {
 
   return (
     <>
-      <div className="wrapper h-screen">
+      <div className="wrapper h-screen bg-zinc-100">
         <nav
           id="navigationbar"
           className={
@@ -161,7 +161,7 @@ export function App() {
 
         <section
           id="home"
-          className="h-full w-full bg-hero-bg bg-center text-zinc-100 lg:bg-cover pb-8 flex flex-col justify-between"
+          className="h-full w-full bg-hero-bg bg-center bg-zinc-950 text-zinc-100 lg:bg-cover pb-8 flex flex-col justify-between"
         >
           <main className="h-full flex items-center justify-center text-4xl font-bold text-center pt-20">
             <h1>Arte, Código & Design</h1>
