@@ -25,7 +25,7 @@ export function App() {
             id="menu"
             className={
               isNavOpen
-                ? "h-full w-full fixed block text-4xl top-0 left-0 backdrop-blur-md pt-40 px-7 z-50"
+                ? "h-full w-full fixed block text-4xl top-0 left-0 backdrop-blur-md pt-40 px-7"
                 : "hidden lg:block"
             }
           >
@@ -49,7 +49,10 @@ export function App() {
                 <a
                   href="#creative"
                   className="hover:opacity-50 ease-out duration-300"
-                  onClick={() => setIsNavOpen(false)}
+                  onClick={() => {
+                    setIsNavOpen(false);
+                    setIsAboutOpen(false);
+                  }}
                 >
                   Criativo
                 </a>
@@ -58,7 +61,10 @@ export function App() {
                 <a
                   href="#social"
                   className="hover:opacity-50 ease-out duration-300"
-                  onClick={() => setIsNavOpen(false)}
+                  onClick={() => {
+                    setIsNavOpen(false);
+                    setIsAboutOpen(false);
+                  }}
                 >
                   Social
                 </a>
@@ -78,7 +84,7 @@ export function App() {
             className={isNavOpen ? "block z-50" : "hidden"}
             onClick={() => {
               setIsNavOpen(false);
-              setIsAboutOpen((current) => !current);
+              setIsAboutOpen(false);
             }}
           >
             <X size={36} color="#fafafa" />
