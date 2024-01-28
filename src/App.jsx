@@ -217,7 +217,7 @@ export function App() {
                   img={allDesertGoodsDemo}
                   name="AllDesertGoods"
                   url="https://alldesertgoods.vercel.app"
-                  description="Art Gallery"
+                  description="Galeria de arte"
                   techs={["HTML", "CSS", "JS"]}
                 />
               </SwiperSlide>
