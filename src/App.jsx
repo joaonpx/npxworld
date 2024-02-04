@@ -8,7 +8,9 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
+import { SocialLink } from "./components/SocialLink";
 import { Project } from "./components/Project/";
+
 import wdotDemo from "./assets/wdot-demo.png";
 import allDesertGoodsDemo from "./assets/alldesertgoods-demo.png";
 
@@ -17,23 +19,41 @@ import "./app.css";
 export function App() {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isAbountOpen, setIsAboutOpen] = useState(false);
-  const [scrollPosition, setScrollPosition] = useState(false);
+  const [isCurrentSectionHome, setIsCurrentSectionHome] = useState(true);
+  const [isCurrentSectionCreative, setIsCurrentSectionCreative] =
+    useState(false);
+  const [isCurrentSectionSocial, setIsCurrentSectionSocial] = useState(false);
+
+  function deactivateSection() {
+    document.querySelector("#social-link").className = "hidden";
+  }
 
   useEffect(() => {
+    deactivateSection();
+
     window.addEventListener("scroll", () => {
-      setScrollPosition(window.scrollY >= creative.offsetTop);
+      setIsCurrentSectionHome(
+        window.scrollY >= home.offsetTop && window.scrollY < creative.offsetTop
+      );
+
+      setIsCurrentSectionCreative(
+        window.scrollY >= creative.offsetTop
+        // && window.scrollY < social.offsetTop
+      );
+
+      // setIsCurrentSectionSocial(window.scrollY >= social.offsetTop);
     });
   }, []);
 
   return (
     <>
-      <div className="wrapper h-screen bg-zinc-100">
+      <div id="wrapper" className="wrapper h-screen bg-zinc-100">
         <nav
           id="navigationbar"
           className={
-            scrollPosition
-              ? "w-full fixed flex items-center justify-between py-8 px-7 text-zinc-950 z-40"
-              : "w-full fixed flex items-center justify-between py-8 px-7 text-zinc-100 z-40"
+            isCurrentSectionHome
+              ? "w-full fixed flex items-center justify-between py-8 px-7 text-zinc-100 z-40"
+              : "w-full fixed flex items-center justify-between py-8 px-7 text-zinc-950 z-40"
           }
         >
           <Link
@@ -53,9 +73,9 @@ export function App() {
               size={48}
               weight="fill"
               className={
-                scrollPosition
-                  ? "fill-zinc-950 ease-out duration-300"
-                  : "fill-zinc-100 ease-out duration-300"
+                isCurrentSectionHome
+                  ? "fill-zinc-100 ease-out duration-300"
+                  : "fill-zinc-950 ease-out duration-300"
               }
             />
           </Link>
@@ -71,7 +91,6 @@ export function App() {
             <ul className="flex flex-col gap-4 lg:flex-row ">
               <li>
                 <Link
-                  activeClass="active"
                   to="home"
                   spy={true}
                   smooth={true}
@@ -97,7 +116,7 @@ export function App() {
                   duration={500}
                   href="#creative"
                   className={
-                    scrollPosition
+                    isCurrentSectionCreative
                       ? "opacity-50"
                       : "hover:opacity-50 ease-out duration-300"
                   }
@@ -112,12 +131,20 @@ export function App() {
               <li>
                 <Link
                   to="social"
+                  spy={true}
+                  smooth={true}
+                  duration={500}
                   href="#social"
-                  className="hover:opacity-50 ease-out duration-300"
+                  className={
+                    isCurrentSectionSocial
+                      ? "opacity-50"
+                      : "hover:opacity-50 ease-out duration-300"
+                  }
                   onClick={() => {
                     setIsNavOpen(false);
                     setIsAboutOpen(false);
                   }}
+                  id="social-link"
                 >
                   Social
                 </Link>
@@ -133,9 +160,9 @@ export function App() {
             <List
               size={36}
               className={
-                scrollPosition
-                  ? "fill-zinc-950 ease-out duration-300"
-                  : "fill-zinc-100 ease-out duration-300"
+                isCurrentSectionHome
+                  ? "fill-zinc-100 ease-out duration-300"
+                  : "fill-zinc-950 ease-out duration-300"
               }
             />
           </button>
@@ -151,9 +178,9 @@ export function App() {
             <X
               size={36}
               className={
-                scrollPosition
-                  ? "fill-zinc-950 ease-out duration-300"
-                  : "fill-zinc-100 ease-out duration-300"
+                isCurrentSectionHome
+                  ? "fill-zinc-100 ease-out duration-300"
+                  : "fill-zinc-950 ease-out duration-300"
               }
             />
           </button>
@@ -175,9 +202,9 @@ export function App() {
                 : "opacity-0 -translate-x-20"
             }
           >
-            <p className="text-center lg:max-w-xs lg:text-right">
+            <p className="text-center lg:max-w-xs lg:text-right text-pretty">
               Npxworld é uma marca criativa que atua no desenvolvimento de
-              websites. Concebida por{" "}
+              websites. Concebida por
               <a
                 href="https://www.github.com/joaonpx"
                 className="hover:opacity-50 ease-out duration-300"
@@ -200,7 +227,7 @@ export function App() {
               navigation={true}
               spaceBetween={50}
               slidesPerView={1}
-              speed={1400}
+              speed={1}
               className="h-full w-full"
             >
               <SwiperSlide className="flex items-center">
@@ -223,6 +250,19 @@ export function App() {
               </SwiperSlide>
             </Swiper>
           </div>
+        </section>
+
+        <section
+          id="social"
+          // className="h-full flex gap-6 items-center justify-center"
+          className="hidden"
+        >
+          <SocialLink link="https://github.com/joaonpx" name="Github" />
+          <SocialLink
+            link="https://www.linkedin.com/in/joaocarlosnpx/"
+            name="LinkedIn"
+          />
+          <SocialLink link="mailto:cheyprivado@gmail.com" name="Email" />
         </section>
       </div>
     </>
