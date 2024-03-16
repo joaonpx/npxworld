@@ -1,4 +1,4 @@
-import { Globe, List, X } from "@phosphor-icons/react";
+import { Globe } from "@phosphor-icons/react";
 import { useEffect, useState } from "react";
 import { Link, animateScroll as scroll } from "react-scroll";
 
@@ -14,8 +14,10 @@ import { Project } from "./components/Project/";
 import heroBackground from "./assets/plantBackground.mp4";
 import wdotDemo from "./assets/wdot-demo.png";
 import allDesertGoodsDemo from "./assets/alldesertgoods-demo.png";
+import logo from "./assets/logo.svg";
 
 import "./app.css";
+import { Menu } from "./components/Menu";
 
 export function App() {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -23,15 +25,23 @@ export function App() {
   const [isCurrentSectionHome, setIsCurrentSectionHome] = useState(true);
   const [isCurrentSectionCreative, setIsCurrentSectionCreative] =
     useState(false);
-  const [isCurrentSectionSocial, setIsCurrentSectionSocial] = useState(false);
 
-  function deactivateSection() {
-    document.querySelector("#social-link").className = "hidden";
-  }
+  const socialLinks = [
+    {
+      name: "Github",
+      link: "https://github.com/joaonpx",
+    },
+    {
+      name: "LinkedIn",
+      link: "https://www.linkedin.com/in/joaocarlosnpx/",
+    },
+    {
+      name: "Email",
+      link: "mailto:cheyprivado@gmail.com",
+    },
+  ];
 
   useEffect(() => {
-    deactivateSection();
-
     window.addEventListener("scroll", () => {
       setIsCurrentSectionHome(
         window.scrollY >= home.offsetTop && window.scrollY < creative.offsetTop
@@ -45,7 +55,6 @@ export function App() {
       // setIsCurrentSectionSocial(window.scrollY >= social.offsetTop);
     });
   }, []);
-
   return (
     <>
       <div id="wrapper" className="wrapper h-screen bg-zinc-100">
@@ -80,111 +89,14 @@ export function App() {
               }
             />
           </Link>
-
-          <div
-            id="menu"
-            className={
-              isNavOpen
-                ? "h-full w-full fixed block text-4xl top-0 left-0 backdrop-blur-md pt-40 px-7"
-                : "hidden lg:block"
-            }
-          >
-            <ul className="flex flex-col gap-4 lg:flex-row ">
-              <li>
-                <Link
-                  to="home"
-                  spy={true}
-                  smooth={true}
-                  duration={500}
-                  href="#home"
-                  className={
-                    isAbountOpen
-                      ? "opacity-50"
-                      : "hover:opacity-50 ease-out duration-300"
-                  }
-                  onClick={() => {
-                    setIsAboutOpen((current) => !current);
-                  }}
-                >
-                  Sobre
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="creative"
-                  spy={true}
-                  smooth={true}
-                  duration={500}
-                  href="#creative"
-                  className={
-                    isCurrentSectionCreative
-                      ? "opacity-50"
-                      : "hover:opacity-50 ease-out duration-300"
-                  }
-                  onClick={() => {
-                    setIsNavOpen(false);
-                    setIsAboutOpen(false);
-                  }}
-                >
-                  Criativo
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="social"
-                  spy={true}
-                  smooth={true}
-                  duration={500}
-                  href="#social"
-                  className={
-                    isCurrentSectionSocial
-                      ? "opacity-50"
-                      : "hover:opacity-50 ease-out duration-300"
-                  }
-                  onClick={() => {
-                    setIsNavOpen(false);
-                    setIsAboutOpen(false);
-                  }}
-                  id="social-link"
-                >
-                  Social
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <button
-            id="open-button"
-            className={isNavOpen ? "hidden" : "block z-50 lg:hidden"}
-            onClick={() => setIsNavOpen(true)}
-          >
-            <List
-              size={36}
-              className={
-                isCurrentSectionHome
-                  ? "fill-zinc-100 ease-out duration-300"
-                  : "fill-zinc-950 ease-out duration-300"
-              }
-            />
-          </button>
-
-          <button
-            id="close-button"
-            className={isNavOpen ? "block z-50" : "hidden"}
-            onClick={() => {
-              setIsNavOpen(false);
-              setIsAboutOpen(false);
-            }}
-          >
-            <X
-              size={36}
-              className={
-                isCurrentSectionHome
-                  ? "fill-zinc-100 ease-out duration-300"
-                  : "fill-zinc-950 ease-out duration-300"
-              }
-            />
-          </button>
+          <Menu
+            isNavOpen={isNavOpen}
+            isAbountOpen={isAbountOpen}
+            isCurrentSectionHome={isCurrentSectionHome}
+            isCurrentSectionCreative={isCurrentSectionCreative}
+            setIsNavOpen={setIsNavOpen}
+            setIsAboutOpen={setIsAboutOpen}
+          />
         </nav>
 
         <section
@@ -218,7 +130,12 @@ export function App() {
           </div>
 
           <video
-            className="videoTag absolute h-full w-full object-cover"
+            id="background-video"
+            className={
+              isCurrentSectionHome
+                ? "absolute h-full w-full object-cover"
+                : "absolute h-full w-full object-cover hidden"
+            }
             autoPlay
             loop
             muted
@@ -265,15 +182,23 @@ export function App() {
 
         <section
           id="social"
-          // className="h-full flex gap-6 items-center justify-center"
-          className="hidden"
+          className="h-1/2 lg:h-1/5 bg-zinc-950 text-zinc-100 flex items-center justify-center gap-24 overflow-hidden flex-col lg:flex-row"
         >
-          <SocialLink link="https://github.com/joaonpx" name="Github" />
-          <SocialLink
-            link="https://www.linkedin.com/in/joaocarlosnpx/"
-            name="LinkedIn"
+          <div className="group">
+            <p className="uppercase tracking-[42px] mb-2 opacity-60 group-hover:opacity-100 duration-200">
+              Social
+            </p>
+            <div className="flex items-center gap-6 ">
+              {socialLinks.map((social, index) => (
+                <SocialLink key={index} link={social.link} name={social.name} />
+              ))}
+            </div>
+          </div>
+          <img
+            src={logo}
+            alt="Logo Npxworld"
+            className="w-72 rotate-[30deg] relative lg:top-4"
           />
-          <SocialLink link="mailto:cheyprivado@gmail.com" name="Email" />
         </section>
       </div>
     </>
