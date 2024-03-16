@@ -11,6 +11,7 @@ import "swiper/css/pagination";
 import { SocialLink } from "./components/SocialLink";
 import { Project } from "./components/Project/";
 
+import heroBackground from "./assets/plantBackground.mp4";
 import wdotDemo from "./assets/wdot-demo.png";
 import allDesertGoodsDemo from "./assets/alldesertgoods-demo.png";
 
@@ -188,9 +189,9 @@ export function App() {
 
         <section
           id="home"
-          className="h-full w-full bg-hero-bg bg-center bg-zinc-950 text-zinc-100 lg:bg-cover pb-8 flex flex-col justify-between"
+          className="h-full w-full text-zinc-100 pb-8 flex flex-col justify-between"
         >
-          <main className="h-full flex items-center justify-center text-4xl font-bold text-center pt-20">
+          <main className="h-full flex items-center justify-center text-4xl font-bold text-center pt-20 relative z-10">
             <h1>Arte, Código & Design</h1>
           </main>
 
@@ -215,6 +216,16 @@ export function App() {
               , um desenvolvedor web especializado em front-end.
             </p>
           </div>
+
+          <video
+            className="videoTag absolute h-full w-full object-cover"
+            autoPlay
+            loop
+            muted
+          >
+            {/* Videos by Rostislav Uzunov */}
+            <source src={heroBackground} type="video/mp4" />
+          </video>
         </section>
 
         <section id="creative" className="h-full px-7 py-8">
