@@ -182,13 +182,13 @@ export function App() {
 
         <section
           id="social"
-          className="h-1/2 lg:h-1/5 bg-zinc-950 text-zinc-100 flex items-center justify-center gap-24 overflow-hidden flex-col lg:flex-row"
+          className="lg:h-1/5 pl-8 lg:pt-0 lg:pl-0 bg-zinc-950 text-zinc-100 flex items-center justify-evenly overflow-hidden flex-col lg:flex-row"
         >
-          <div className="group">
-            <p className="uppercase tracking-[42px] mb-2 opacity-60 group-hover:opacity-100 duration-200">
+          <div className="group pt-16 lg:pt-0">
+            <p className="uppercase tracking-[44.5px] mb-2 opacity-60 group-hover:opacity-100 duration-200 text-xs lg:text-sm lg:tracking-[43px]">
               Social
             </p>
-            <div className="flex items-center gap-6 ">
+            <div className="flex items-center gap-6">
               {socialLinks.map((social, index) => (
                 <SocialLink key={index} link={social.link} name={social.name} />
               ))}
@@ -197,7 +197,7 @@ export function App() {
           <img
             src={logo}
             alt="Logo Npxworld"
-            className="w-72 rotate-[30deg] relative lg:top-4"
+            className="rotate-[30deg] relative w-96 top-28 lg:w-72 lg:top-4"
           />
         </section>
       </div>
