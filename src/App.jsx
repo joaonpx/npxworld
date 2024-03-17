@@ -11,13 +11,15 @@ import "swiper/css/pagination";
 import { SocialLink } from "./components/SocialLink";
 import { Project } from "./components/Project/";
 
-import heroBackground from "./assets/plantBackground.mp4";
 import wdotDemo from "./assets/wdot-demo.png";
 import allDesertGoodsDemo from "./assets/alldesertgoods-demo.png";
 import logo from "./assets/logo.svg";
+import desktopVideo from "./assets/background-desktop.mp4";
+import mobileVideo from "./assets/background-mobile.mp4";
 
 import "./app.css";
 import { Menu } from "./components/Menu";
+import { Video } from "./components/Video";
 
 export function App() {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -25,6 +27,7 @@ export function App() {
   const [isCurrentSectionHome, setIsCurrentSectionHome] = useState(true);
   const [isCurrentSectionCreative, setIsCurrentSectionCreative] =
     useState(false);
+  const [isMobileDevice, setIsMobileDevice] = useState(false);
 
   const socialLinks = [
     {
@@ -54,6 +57,10 @@ export function App() {
 
       // setIsCurrentSectionSocial(window.scrollY >= social.offsetTop);
     });
+
+    if (window.innerWidth <= 768) {
+      setIsMobileDevice(true);
+    }
   }, []);
   return (
     <>
@@ -129,20 +136,12 @@ export function App() {
             </p>
           </div>
 
-          <video
-            id="background-video"
-            className={
-              isCurrentSectionHome
-                ? "absolute h-full w-full object-cover"
-                : "absolute h-full w-full object-cover hidden"
-            }
-            autoPlay
-            loop
-            muted
-          >
-            {/* Videos by Rostislav Uzunov */}
-            <source src={heroBackground} type="video/mp4" />
-          </video>
+          <Video
+            isMobileDevice={isMobileDevice}
+            isCurrentSectionHome={isCurrentSectionHome}
+            desktopVideo={desktopVideo}
+            mobileVideo={mobileVideo}
+          />
         </section>
 
         <section id="creative" className="h-full px-7 py-8">
