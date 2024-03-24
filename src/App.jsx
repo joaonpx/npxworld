@@ -47,11 +47,12 @@ export function App() {
   useEffect(() => {
     window.addEventListener("scroll", () => {
       setIsCurrentSectionHome(
-        window.scrollY >= home.offsetTop && window.scrollY < creative.offsetTop
+        window.scrollY >= home.offsetTop &&
+          window.scrollY < creative.offsetTop - 40
       );
 
       setIsCurrentSectionCreative(
-        window.scrollY >= creative.offsetTop
+        window.scrollY >= creative.offsetTop - 40
         // && window.scrollY < social.offsetTop
       );
 
@@ -64,7 +65,7 @@ export function App() {
   }, []);
   return (
     <>
-      <div id="wrapper" className="wrapper h-screen bg-zinc-100">
+      <div id="wrapper" className="wrapper h-screen bg-zinc-100 antialiased">
         <nav
           id="navigationbar"
           className={
@@ -108,9 +109,9 @@ export function App() {
 
         <section
           id="home"
-          className="h-full w-full text-zinc-100 pb-8 flex flex-col justify-between"
+          className="h-full w-full bg-zinc-950 text-zinc-100 pb-8 flex flex-col justify-between hero-bg"
         >
-          <main className="h-full flex items-center justify-center text-4xl font-bold text-center pt-20 relative z-10">
+          <main className="h-full flex items-center  justify-center text-4xl font-bold text-center pt-20 relative z-10">
             <h1>Arte, Código & Design</h1>
           </main>
 
@@ -144,7 +145,7 @@ export function App() {
           />
         </section>
 
-        <section id="creative" className="h-full px-7 py-8">
+        <section id="creative" className="h-full px-7 py-8 snap-start">
           <div className="h-full flex items-center justify-center">
             <Swiper
               modules={[Navigation, Pagination]}

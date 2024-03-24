@@ -4,6 +4,8 @@
 
 :root {
   --swiper-theme-color: #09090b;
+
+  scroll-snap-type: y proximity;
 }
 
 @layer base {
