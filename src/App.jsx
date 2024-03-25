@@ -52,11 +52,11 @@ export function App() {
       );
 
       setIsCurrentSectionCreative(
-        window.scrollY >= creative.offsetTop - 40
-        // && window.scrollY < social.offsetTop
+        window.scrollY >= creative.offsetTop - 40 &&
+          window.scrollY < social.offsetTop
       );
 
-      // setIsCurrentSectionSocial(window.scrollY >= social.offsetTop);
+      setIsCurrentSectionSocial(window.scrollY >= social.offsetTop);
     });
 
     if (window.innerWidth <= 768) {
@@ -165,6 +165,7 @@ export function App() {
                   url="https://wdotnews.vercel.app"
                   description="Homepage de notícias"
                   techs={["React"]}
+                  github="https://github.com/joaonpx/wdot"
                 />
               </SwiperSlide>
               <SwiperSlide className="flex items-center">
@@ -174,32 +175,36 @@ export function App() {
                   url="https://alldesertgoods.vercel.app"
                   description="Galeria de arte"
                   techs={["HTML", "CSS", "JS"]}
+                  github="https://github.com/joaonpx/alldesertgoods"
                 />
               </SwiperSlide>
             </Swiper>
           </div>
         </section>
 
-        <section
-          id="social"
-          className="lg:h-1/5 pl-8 lg:pt-0 lg:pl-0 bg-zinc-950 text-zinc-100 flex items-center justify-evenly overflow-hidden flex-col lg:flex-row"
-        >
-          <div className="group pt-16 lg:pt-0">
-            <p className="uppercase tracking-[44.5px] mb-2 opacity-60 group-hover:opacity-100 duration-200 text-xs lg:text-sm lg:tracking-[43px]">
-              Social
-            </p>
-            <div className="flex items-center gap-6">
-              {socialLinks.map((social, index) => (
-                <SocialLink key={index} link={social.link} name={social.name} />
-              ))}
+        <footer id="social" className="p-7">
+          <div className="bg-zinc-950 text-zinc-100 flex flex-col items-center justify-between overflow-hidden rounded-3xl lg:flex-row lg:h-48">
+            <div className="group pt-16 pl-10 lg:pt-0 lg:pl-20">
+              <p className="uppercase tracking-[44.5px] mb-2 opacity-60 group-hover:opacity-100 duration-200 text-xs lg:text-sm lg:tracking-[43px]">
+                Social
+              </p>
+              <div className="flex items-center gap-6">
+                {socialLinks.map((social, index) => (
+                  <SocialLink
+                    key={index}
+                    link={social.link}
+                    name={social.name}
+                  />
+                ))}
+              </div>
             </div>
+            <img
+              src={logo}
+              alt="Logo Npxworld"
+              className="rotate-[30deg] relative w-96 top-28 lg:w-72 lg:top-4 lg:right-14"
+            />
           </div>
-          <img
-            src={logo}
-            alt="Logo Npxworld"
-            className="rotate-[30deg] relative w-96 top-28 lg:w-72 lg:top-4"
-          />
-        </section>
+        </footer>
       </div>
     </>
   );

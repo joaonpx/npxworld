@@ -8,7 +8,7 @@ export function SocialLink({ link, name }) {
         className="flex items-center gap-2 hover:opacity-50 ease-out duration-300"
       >
         {name}
-        <ArrowUpRight size={24} color="#f4f4f5" className="w-4" />
+        <ArrowUpRight size={16} color="#f4f4f5" />
       </a>
     </>
   );

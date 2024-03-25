@@ -16,7 +16,7 @@ export function Video({
       loop
       muted
     >
-      {/* Videos by Rostislav Uzunov */}
+      {/* Video by Rostislav Uzunov */}
       {isMobileDevice ? (
         <source src={mobileVideo} type="video/mp4" />
       ) : (
