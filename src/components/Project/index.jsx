@@ -1,4 +1,6 @@
-export function Project({ img, url, name, description, techs }) {
+import { GithubLogo } from "@phosphor-icons/react";
+
+export function Project({ img, url, name, description, techs, github }) {
   return (
     <>
       <div className="h-full w-full flex justify-center items-center text-zinc-950">
@@ -18,18 +20,27 @@ export function Project({ img, url, name, description, techs }) {
           >
             {name} <span className="ml-6">{description}</span>
           </a>
-          <ul className="flex flex-wrap gap-4">
-            {techs.map((tech) => {
-              return (
-                <li
-                  className="border border-zinc-950 rounded-full px-3 py-1"
-                  key={tech}
-                >
-                  {tech}
-                </li>
-              );
-            })}
-          </ul>
+          <div className="flex items-center gap-4">
+            <ul className="flex flex-wrap gap-4">
+              {techs.map((tech) => {
+                return (
+                  <li
+                    className="border border-zinc-950 rounded-full px-3 py-1"
+                    key={tech}
+                  >
+                    {tech}
+                  </li>
+                );
+              })}
+            </ul>
+            <a
+              href={github}
+              target="_blank"
+              className="hover:opacity-50 ease-out duration-300"
+            >
+              <GithubLogo size={32} color="#09090b" weight="thin" />
+            </a>
+          </div>
         </div>
       </div>
     </>
