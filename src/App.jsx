@@ -175,7 +175,7 @@ export function App() {
                   name="AllDesertGoods"
                   url="https://alldesertgoods.vercel.app"
                   description="Galeria de arte"
-                  techs={["HTML", "CSS", "JS"]}
+                  techs={["HTML", "CSS", "JS", "SASS"]}
                   github="https://github.com/joaonpx/alldesertgoods"
                 />
               </SwiperSlide>
