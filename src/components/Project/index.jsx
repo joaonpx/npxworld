@@ -20,8 +20,8 @@ export function Project({ img, url, name, description, techs, github }) {
           >
             {name} <span className="ml-6">{description}</span>
           </a>
-          <div className="flex items-center gap-4">
-            <ul className="flex flex-wrap gap-4">
+          <div className="flex items-center justify-center gap-4 flex-wrap">
+            <ul className="flex items-center justify-center flex-wrap gap-4">
               {techs.map((tech) => {
                 return (
                   <li
@@ -33,6 +33,7 @@ export function Project({ img, url, name, description, techs, github }) {
                 );
               })}
             </ul>
+
             <a
               href={github}
               target="_blank"

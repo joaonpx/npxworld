@@ -11,6 +11,7 @@ import "swiper/css/pagination";
 import { SocialLink } from "./components/SocialLink";
 import { Project } from "./components/Project/";
 
+import weatherDemo from "./assets/weather-demo.png";
 import wdotDemo from "./assets/wdot-demo.png";
 import allDesertGoodsDemo from "./assets/alldesertgoods-demo.png";
 import logo from "./assets/logo.svg";
@@ -176,6 +177,16 @@ export function App() {
                   description="Galeria de arte"
                   techs={["HTML", "CSS", "JS"]}
                   github="https://github.com/joaonpx/alldesertgoods"
+                />
+              </SwiperSlide>
+              <SwiperSlide className="flex items-center">
+                <Project
+                  img={weatherDemo}
+                  name="Weather"
+                  url="https://github.com/joaonpx/weather"
+                  description="Aplicativo para consultar o clima"
+                  techs={["Kotlin", "Jetpack Compose", "Retrofit"]}
+                  github="https://github.com/joaonpx/weather"
                 />
               </SwiperSlide>
             </Swiper>

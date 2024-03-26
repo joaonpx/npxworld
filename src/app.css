@@ -14,3 +14,10 @@
     display: none !important;
   }
 }
+
+#creative
+  > div
+  > div
+  > div.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: 220px !important;
+}
