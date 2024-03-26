@@ -193,8 +193,8 @@ export function App() {
           </div>
         </section>
 
-        <footer id="social" className="p-7">
-          <div className="bg-zinc-950 text-zinc-100 flex flex-col items-center justify-between overflow-hidden rounded-3xl lg:flex-row lg:h-48">
+        <footer id="social" className="pt-8">
+          <div className="bg-zinc-950 text-zinc-100 flex flex-col items-center justify-between overflow-hidden lg:flex-row lg:h-48">
             <div className="group pt-16 pl-10 lg:pt-0 lg:pl-20">
               <p className="uppercase tracking-[44.5px] mb-2 opacity-60 group-hover:opacity-100 duration-200 text-xs lg:text-sm lg:tracking-[43px]">
                 Social

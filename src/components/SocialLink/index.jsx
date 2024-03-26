@@ -6,6 +6,7 @@ export function SocialLink({ link, name }) {
       <a
         href={link}
         className="flex items-center gap-2 hover:opacity-50 ease-out duration-300"
+        target="_blank"
       >
         {name}
         <ArrowUpRight size={16} color="#f4f4f5" />
