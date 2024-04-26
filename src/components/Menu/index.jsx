@@ -72,7 +72,7 @@ export function Menu({
           className={
             isCurrentSectionHome
               ? "fill-zinc-100 ease-out duration-300"
-              : "fill-zinc-950 ease-out duration-300"
+              : "fill-black ease-out duration-300"
           }
         />
       </button>
@@ -90,7 +90,7 @@ export function Menu({
           className={
             isCurrentSectionHome
               ? "fill-zinc-100 ease-out duration-300"
-              : "fill-zinc-950 ease-out duration-300"
+              : "fill-black ease-out duration-300"
           }
         />
       </button>

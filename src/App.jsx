@@ -41,7 +41,7 @@ export function App() {
     },
     {
       name: "Email",
-      link: "mailto:cheyprivado@gmail.com",
+      link: "mailto:frontdesk@npxworld.com",
     },
   ];
 
@@ -72,7 +72,7 @@ export function App() {
           className={
             isCurrentSectionHome
               ? "w-full fixed flex items-center justify-between py-8 px-7 text-zinc-100 z-40"
-              : "w-full fixed flex items-center justify-between py-8 px-7 text-zinc-950 z-40"
+              : "w-full fixed flex items-center justify-between py-8 px-7 text-black z-40"
           }
         >
           <Link
@@ -94,7 +94,7 @@ export function App() {
               className={
                 isCurrentSectionHome
                   ? "fill-zinc-100 ease-out duration-300"
-                  : "fill-zinc-950 ease-out duration-300"
+                  : "fill-black ease-out duration-300"
               }
             />
           </Link>
@@ -110,7 +110,7 @@ export function App() {
 
         <section
           id="home"
-          className="h-full w-full bg-zinc-950 text-zinc-100 pb-8 flex flex-col justify-between hero-bg"
+          className="h-full w-full bg-black text-zinc-100 pb-8 flex flex-col justify-between hero-bg"
         >
           <main className="h-full flex items-center  justify-center text-4xl font-bold text-center pt-20 relative z-10">
             <h1>Arte, Código & Design</h1>
@@ -194,7 +194,7 @@ export function App() {
         </section>
 
         <footer id="social" className="pt-8">
-          <div className="bg-zinc-950 text-zinc-100 flex flex-col items-center justify-between overflow-hidden lg:flex-row lg:h-48">
+          <div className="bg-black text-zinc-100 flex flex-col items-center justify-between overflow-hidden lg:flex-row lg:h-48">
             <div className="group pt-16 pl-10 lg:pt-0 lg:pl-20">
               <p className="uppercase tracking-[44.5px] mb-2 opacity-60 group-hover:opacity-100 duration-200 text-xs lg:text-sm lg:tracking-[43px]">
                 Social

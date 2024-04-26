@@ -3,7 +3,7 @@ import { GithubLogo } from "@phosphor-icons/react";
 export function Project({ img, url, name, description, techs, github }) {
   return (
     <>
-      <div className="h-full w-full flex justify-center items-center text-zinc-950">
+      <div className="h-full w-full flex justify-center items-center text-black">
         <a href={url} target="_blank">
           <img
             src={img}
@@ -25,7 +25,7 @@ export function Project({ img, url, name, description, techs, github }) {
               {techs.map((tech) => {
                 return (
                   <li
-                    className="border border-zinc-950 rounded-full px-3 py-1"
+                    className="border border-black rounded-full px-3 py-1"
                     key={tech}
                   >
                     {tech}
