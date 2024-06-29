@@ -14,6 +14,7 @@ import { Project } from "./components/Project/";
 import weatherDemo from "./assets/weather-demo.png";
 import wdotDemo from "./assets/wdot-demo.png";
 import allDesertGoodsDemo from "./assets/alldesertgoods-demo.png";
+import passInDemo from "./assets/pass-in-demo.png";
 import logo from "./assets/logo.svg";
 import desktopVideo from "./assets/background-desktop.mp4";
 import mobileVideo from "./assets/background-mobile.mp4";
@@ -125,16 +126,16 @@ export function App() {
             }
           >
             <p className="text-center lg:max-w-xs lg:text-right text-pretty">
-              Npxworld é uma marca criativa que atua no desenvolvimento de
-              websites. Concebida por
+              Npxworld é uma marca criativa que atua no desenvolvimento de web
+              sites e APIs. Concebida por
               <a
-                href="https://www.github.com/joaonpx"
+                href="https://www.linkedin.com/in/joaocarlosnpx"
                 className="hover:opacity-50 ease-out duration-300"
                 target="_blank"
               >
                 João Carlos
               </a>
-              , um desenvolvedor web especializado em front-end.
+              , um desenvolvedor especializado em aplicações web.
             </p>
           </div>
 
@@ -161,6 +162,26 @@ export function App() {
             >
               <SwiperSlide className="flex items-center">
                 <Project
+                  img={passInDemo}
+                  name="Pass In"
+                  url="https://github.com/joaonpx/pass-in"
+                  description="Gestão de participantes em eventos presenciais"
+                  techs={["Spring", "HSQLDB"]}
+                  github="https://github.com/joaonpx/pass-in"
+                />
+              </SwiperSlide>
+              <SwiperSlide className="flex items-center">
+                <Project
+                  img={weatherDemo}
+                  name="Weather"
+                  url="https://github.com/joaonpx/weather"
+                  description="Aplicativo para consulta climática"
+                  techs={["Kotlin", "Jetpack Compose", "Retrofit"]}
+                  github="https://github.com/joaonpx/weather"
+                />
+              </SwiperSlide>
+              <SwiperSlide className="flex items-center">
+                <Project
                   img={wdotDemo}
                   name="Wdot"
                   url="https://wdotnews.vercel.app"
@@ -177,16 +198,6 @@ export function App() {
                   description="Galeria de arte"
                   techs={["HTML", "CSS", "JS", "SASS"]}
                   github="https://github.com/joaonpx/alldesertgoods"
-                />
-              </SwiperSlide>
-              <SwiperSlide className="flex items-center">
-                <Project
-                  img={weatherDemo}
-                  name="Weather"
-                  url="https://github.com/joaonpx/weather"
-                  description="Aplicativo para consultar o clima"
-                  techs={["Kotlin", "Jetpack Compose", "Retrofit"]}
-                  github="https://github.com/joaonpx/weather"
                 />
               </SwiperSlide>
             </Swiper>
