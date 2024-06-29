@@ -175,7 +175,7 @@ export function App() {
                   img={weatherDemo}
                   name="Weather"
                   url="https://github.com/joaonpx/weather"
-                  description="Aplicativo para consulta climática"
+                  description="Aplicativo para consultas climáticas"
                   techs={["Kotlin", "Jetpack Compose", "Retrofit"]}
                   github="https://github.com/joaonpx/weather"
                 />
