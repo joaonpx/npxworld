@@ -166,7 +166,7 @@ export function App() {
                   name="Pass In"
                   url="https://github.com/joaonpx/pass-in"
                   description="Gestão de participantes em eventos presenciais"
-                  techs={["Spring", "HSQLDB"]}
+                  techs={["Java", "Spring", "HSQLDB"]}
                   github="https://github.com/joaonpx/pass-in"
                 />
               </SwiperSlide>
